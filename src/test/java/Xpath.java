@@ -20,6 +20,7 @@ public class Xpath {
         public void path(){
         driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
         WebElement inputField=driver.findElement(By.xpath("//*[@id=\"input-email\"]"));
+                                                //cssSelector("#input-email")
         inputField.sendKeys("alice@yopmail.com");
 
         try {
@@ -27,7 +28,6 @@ public class Xpath {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @AfterMethod

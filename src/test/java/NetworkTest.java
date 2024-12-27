@@ -27,7 +27,7 @@ public class NetworkTest {
 
         // Emulate network offline
         devTools.send(Network.emulateNetworkConditions(
-                true, 100, 200, 500, Optional.of(ConnectionType.WIFI),
+                false, 100, 200, 500, Optional.of(ConnectionType.WIFI),
                 Optional.empty(), Optional.empty(), Optional.empty()));
 
         driver.get("https://www.google.com/");
