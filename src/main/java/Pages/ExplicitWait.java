@@ -7,10 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class WaitStrategy {
+public class ExplicitWait {
     WebDriver driver;
 
-    public WaitStrategy(WebDriver driver){
+    public ExplicitWait(WebDriver driver){
         this.driver=driver;
     }
 

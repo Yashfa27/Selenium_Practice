@@ -1,16 +1,12 @@
-import Pages.WaitStrategy;
+import Pages.AppNavigation;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import static org.testng.AssertJUnit.assertEquals;
-
-public class WaitStrategyTest {
+public class AppNavigationTest {
     WebDriver driver;
 
     @BeforeTest
@@ -21,14 +17,12 @@ public class WaitStrategyTest {
     }
 
     @Test
-    public void WaitWorking() {
-        WaitStrategy waitStrategy= new WaitStrategy(driver);
-        waitStrategy.WaitTimeFunction();
-
-        WebElement text=driver.findElement(By.xpath("//h4[text()='Hello World!']"));
-        String actual=text.getText();
-        String expected="Hello World!";
-        assertEquals(actual,expected);
+    public void NavigationWorking() {
+        AppNavigation appNavigation=new AppNavigation(driver);
+        appNavigation.GoTo();
+        appNavigation.Backward();
+        appNavigation.Forword();
+        appNavigation.Refresh();
     }
 
     @AfterTest
